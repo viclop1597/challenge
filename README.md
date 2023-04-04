@@ -21,3 +21,17 @@ To run the test case, execute the following command in the terminal:
 ```
 $ pytest test.py
 ```
+
+## Tips.
+You will need Selenium WebDriver for Chrome installed on your system. To check if you have it you can follow these steps:
+
+    Open your terminal/command prompt
+    Type "chromedriver" and press enter
+    If you see a message that says "Starting ChromeDriver...", then you have the ChromeDriver installed. If you see an error message, then you don't have it installed.
+
+To add the ChromeDriver to your system path, you can follow these steps:
+
+    Download the ChromeDriver from the official website: https://sites.google.com/chromium.org/driver/
+    Extract the file to a directory of your choice.
+    Open your terminal/command prompt and type "echo $PATH". This will show you the current directories in your system path.
+    Move the ChromeDriver executable file to one of the directories listed in your system path. For example, if you see "/usr/local/bin" in the output of the previous command, you can move the ChromeDriver executable file to that directory.
