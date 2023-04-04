@@ -1,4 +1,4 @@
-# challenge - Test Automation - Global Hitss
+# challenge - Test Automation 
 
 This code is a Python script that automates the process of searching for Playstation 4 products on the MercadoLibre website, filters them by location and sorts them by price in descending order. Finally, it displays the name and price of the top 5 products.
 The script uses the Selenium library to automate browser actions. It also used ChromeDriver as the web driver.
