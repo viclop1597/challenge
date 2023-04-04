@@ -3,7 +3,7 @@
 This is a test case to navigate to the MercadoLibre website and perform several actions. 
 The test script was written in Python and uses the Pytest testing framework.
 
-##Test Actions
+## Test Actions
 
 The following actions are performed by the test case:
 
