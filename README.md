@@ -12,3 +12,12 @@ The following actions are performed by the test case:
     Apply the filter by clicking the "Nuevos" checkbox in the condition filter section.
     Apply the filter by clicking the "Cdmx" checkbox in the location filter section.
     Apply the order by selecting "Mayor a Menor Precio" in the order filter section.
+
+
+## Running the Test
+
+To run the test case, execute the following command in the terminal:
+
+```
+$ pytest test.py
+```
