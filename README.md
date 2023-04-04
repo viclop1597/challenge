@@ -1,7 +1,8 @@
 # challenge - Test Automation - Global Hitss
 
-This is a test case to navigate to the MercadoLibre website and perform several actions. 
-The test script was written in Python and uses Selenium library for web automation. We also used ChromeDriver as the web driver.
+This code is a Python script that automates the process of searching for Playstation 4 products on the MercadoLibre website, filters them by location and sorts them by price in descending order. Finally, it displays the name and price of the top 5 products.
+The script uses the Selenium library to automate browser actions. It also used ChromeDriver as the web driver.
+Overall, this code automates the process of searching for products on the MercadoLibre website, making it easier and faster for users to find what they are looking for.
 
 ## Test Actions
 
@@ -13,14 +14,27 @@ The following actions are performed by the test case:
    - Apply the filter by clicking the "Cdmx" checkbox in the location filter section.
    - Apply the order by selecting "Mayor a Menor Precio" in the order filter section.
 
+## Installation
+
+To run this test case, you need to have Python 3 installed on your system. You also need to install the Selenium WebDriver for Chrome.
+
+To install the required packages, run the following command:
+
+```
+$ pip install selenium
+```
+
+To install the Selenium WebDriver for Chrome, download the latest version of ChromeDriver and add it to your system PATH. (see below)
 
 ## Running the Test
 
 To run the test case, execute the following command in the terminal:
 
 ```
-$ pytest test.py
+$ python3 test.py
 ```
+
+Or if you are using VSC you can just run it.
 
 ## Tips.
 
