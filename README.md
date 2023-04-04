@@ -32,7 +32,7 @@ $ pytest test.py
 
 #### To add the ChromeDriver to your system path, you can follow these steps:
 
-   - Download the ChromeDriver from the official website: https://sites.google.com/chromium.org/driver/
+   - Download the ChromeDriver from the official [website:] (https://sites.google.com/chromium.org/driver/).
    - Extract the file to a directory of your choice.
    - Open your terminal/command prompt and type "echo $PATH". This will show you the current directories in your system path.
    - Move the ChromeDriver executable file to one of the directories listed in your system path. For example, if you see "/usr/local/bin" in the output of the previous command, you can move the ChromeDriver executable file to that directory.
