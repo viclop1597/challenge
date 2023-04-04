@@ -49,8 +49,12 @@ search_box.send_keys(Keys.RETURN)
 
 wait(2)
 
-# Filter by "Nuevos"
+# quit the ookies
 WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div[1]/div[2]/button[1]"))).click()
+
+wait(2)
+
+# Filter by "Nuevos"
 WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/main/div/div[2]/aside/section/div[7]/ul/li[1]/a/span[1]"))).click()
 
 wait(2)
