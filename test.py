@@ -1,41 +1,51 @@
-import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+# Set up the Selenium driver in detached mode
+options = Options()
+options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=options)
+driver.maximize_window()
 
-@pytest.fixture
-def browser():
-    # Set up the Chrome browser
-    # Path to the Chrome driver executable
-    chrome_driver_path = '/usr/local/bin/chromedriver'
-    # Create a Chrome driver service instance with the specified path
-    service = Service(executable_path=chrome_driver_path)
-    # Create a Chrome driver instance with the specified service
-    driver = webdriver.Chrome(service=service)
-    yield driver
-    # Tear down the browser after the test
-    driver.quit()
+# Navigate to the MercadoLibre website
+driver.implicitly_wait(10)
+driver.get("https://www.mercadolibre.com")
+
+# Click on the mexican flag
+driver.find_element(By.CSS_SELECTOR, "#MX").click()
+
+# Click on Más tarde
+WebDriverWait(driver,100).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/div/div[2]/div/div/div[2]/button[2]/span"))).click()
 
 
+# Type "playstation 4" in the search bar
+search_box = driver.find_element(By.CSS_SELECTOR, "#cb1-edit")
+search_box.send_keys("Playstation 4")
+search_box.send_keys(Keys.RETURN)
 
 
-def test_search_ps4(browser):
+# Filter by "Nuevos"
+WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div[1]/div[2]/button[1]"))).click()
+WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/main/div/div[2]/aside/section/div[7]/ul/li[1]/a/span[1]"))).click()
 
-    # Navigate to the MercadoLibre website
-    browser.get('https://www.mercadolibre.com/')
-    print("Navigated to MercadoLibre website.")
+# # Filter by location "Cdmx"
+driver.find_element(By.XPATH, "/html/body/main/div/div[2]/aside/section[2]/div[14]/ul/li[1]/a/span[1]").click()
 
-    # Wait for the select element to be visible
-    select_locator = (By.XPATH, '//select[@name="id"]')
-    wait = WebDriverWait(browser, 30)
-    select_element = wait.until(EC.visibility_of_element_located(select_locator))
+# # Order by "mayor a menor precio"
+driver.find_element(By.CSS_SELECTOR, ".andes-dropdown__display-values").click()
+driver.find_element(By.CSS_SELECTOR, "#andes-dropdown-más-relevantes-list-option-price_desc > div:nth-child(1) > div:nth-child(1) > span:nth-child(1)").click()
 
-    # Create a Select object for the element
-    select = Select(select_element)
+# # Obtain the name and the price of the first 5 products
+products_name = driver.find_elements(By.CSS_SELECTOR, ".ui-search-item__title")
+products_price = driver.find_elements(By.CSS_SELECTOR, ".price-tag-fraction")
 
-    # Select "México" from the dropdown menu
-    select.select_by_visible_text('México')
+# # Print the name and price of the first 5 products
+for i in range(5):
+    print(f"Product Name: {products_name[i].text}\nPrice: ${products_price[i].text}\n")
+    
+# Close the browser
+driver.quit()
