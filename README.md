@@ -35,3 +35,5 @@ To add the ChromeDriver to your system path, you can follow these steps:
     Extract the file to a directory of your choice.
     Open your terminal/command prompt and type "echo $PATH". This will show you the current directories in your system path.
     Move the ChromeDriver executable file to one of the directories listed in your system path. For example, if you see "/usr/local/bin" in the output of the previous command, you can move the ChromeDriver executable file to that directory.
+    
+Finally, if you want to take a look for a report you can access by this link https://docs.google.com/document/d/1xcgGZEv3k8WUms-IIi59tkjKCl8_gQoYuYRRf9GsupU/edit?usp=sharing
