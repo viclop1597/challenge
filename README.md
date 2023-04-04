@@ -7,7 +7,7 @@ The test script was written in Python and uses the Pytest testing framework.
 
 The following actions are performed by the test case:
 
-    * Select the country as "Mexico" by clicking on the country selector element and selecting "Mexico" from the dropdown menu.
+- Select the country as "Mexico" by clicking on the country selector element and selecting "Mexico" from the dropdown menu.
     * Enter "playstation 4" in the search bar and click the search button.
     * Apply the filter by clicking the "Nuevos" checkbox in the condition filter section.
     * Apply the filter by clicking the "Cdmx" checkbox in the location filter section.
